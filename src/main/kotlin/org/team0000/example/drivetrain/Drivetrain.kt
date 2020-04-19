@@ -32,4 +32,8 @@ class Drivetrain : Subsystem() {
         linkTableEntry("LeftPose", table) { leftPose(degrees) }
         linkTableEntry("RightPose", table) { rightPose(degrees) }
     }
+
+    override suspend fun CoroutineScope.default() {
+        controlDrivetrain()
+    }
 }
